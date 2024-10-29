@@ -19,4 +19,4 @@ Index: []
 0  users_table      3       normal       3           0               0              0                   0            
 """
 
-from pycozo.client_patch import Client
+from pycozo_async.client_patch import Client

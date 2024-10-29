@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pycozo"
+name = "pycozo-async"
 version = "0.7.6"
 description = ""
 authors = ["Julep AI developers <developers@julep.ai>"]

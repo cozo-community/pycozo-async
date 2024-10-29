@@ -1,6 +1,6 @@
 # pycozo.py
-from pycozo import *  # noqa
-from pycozo import client
+from pycozo_async import *  # noqa
+from pycozo_async import client
 
 """ Thin wrapper for pycozo.client.Client adding create(), relations(), 
 >>> db = Client()

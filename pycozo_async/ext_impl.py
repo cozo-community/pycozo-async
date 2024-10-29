@@ -10,7 +10,7 @@ import httpx
 from IPython.core.magic import (Magics, magics_class, line_magic,
                                 cell_magic, needs_local_scope)
 
-from pycozo.client import Client, QueryException
+from pycozo_async.client import Client, QueryException
 
 
 @magics_class

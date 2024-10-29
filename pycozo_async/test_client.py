@@ -4,8 +4,8 @@
 #  If a copy of the MPL was not distributed with this file,
 #  You can obtain one at https://mozilla.org/MPL/2.0/.
 import asyncio
-from pycozo import Client
-from pycozo.client import QueryException
+from pycozo_async import Client
+from pycozo_async.client import QueryException
 
 
 async def test_client():
