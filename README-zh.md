@@ -1,7 +1,5 @@
 # PyCozo
 
-[![pypi](https://img.shields.io/pypi/v/pycozo)](https://pypi.org/project/pycozo/)
-
 [Cozo](https://www.cozodb.org) 数据库的 Python 库，支持在 Jupyter 笔记本中使用。
 
 本文叙述的是如何安装设置库本身。有关如何使用 CozoDB（CozoScript）的信息，见 [文档](https://docs.cozodb.org/zh_CN/latest/index.html) 。
@@ -9,17 +7,17 @@
 ## 安装
 
 ```bash
-pip install "pycozo[embedded,requests,pandas]"
+pip install "pycozo-async[embedded,requests,pandas]"
 ```
 
-如果想通过嵌入模式使用 CozoDB，则必须指定 `embedded` 选项；如果想通过 HTTP 请求模式连接 CozoDB 服务器，则必须指定 `requests` 选项。`pandas` 选项会安装 `pandas` 包，并在查询返回结果时将其转换为 Pandas 数据帧。在使用 Jupyter 中使用 pycozo 时建议打开 `pandas` 选项。
+如果想通过嵌入模式使用 CozoDB，则必须指定 `embedded` 选项；如果想通过 HTTP 请求模式连接 CozoDB 服务器，则必须指定 `requests` 选项。`pandas` 选项会安装 `pandas` 包，并在查询返回结果时将其转换为 Pandas 数据帧。在使用 Jupyter 中使用 pycozo-async 时建议打开 `pandas` 选项。
 
 ## Python 客户端
 
 首先引入模块：
 
 ```python
-from pycozo.client import Client
+from pycozo_async.client import Client
 ```
 
 ### 构建数据库
@@ -170,7 +168,7 @@ client.unregister_fixed_rule('Custom')
 通过 [魔法命令](https://ipython.readthedocs.io/en/stable/interactive/magics.html) 可激活两种不同的 Jupyter 工具，两种工具都可以让你直接查询数据库。第一种是：
 
 ```
-%load_ext pycozo.ipyext_direct
+%load_ext pycozo_async.ipyext_direct
 ```
 
 在这种模式下，所有单元格都默认会被作为 CozoScript 执行，除非整个单元格以 `%` 开头。如果单元格的第一行的内容是 `%%py`，则余下的行作为 Python 代码执行。
@@ -178,7 +176,7 @@ client.unregister_fixed_rule('Custom')
 第二种是：
 
 ```
-%load_ext pycozo.ipyext
+%load_ext pycozo_async.ipyext
 ```
 
 在这种模式下，只有在单元格第一行的内容为 `%%cozo` 时，余下的内容才会被作为 CozoScript 执行，因此这种模式适用于 Python 代码比 CozoScript 多的情况。

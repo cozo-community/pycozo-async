@@ -5,7 +5,7 @@
 #  You can obtain one at https://mozilla.org/MPL/2.0/.
 
 """
->>> from pycozo.client import Client
+>>> from pycozo_async.client import Client
 >>> db = Client()
 >>> db.relations()
 Empty DataFrame

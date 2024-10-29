@@ -1,7 +1,5 @@
 # PyCozo
 
-[![pypi](https://img.shields.io/pypi/v/pycozo)](https://pypi.org/project/pycozo/)
-
 Python client and Jupyter helper for [CozoDB](https://www.cozodb.org).
 
 This document describes how to set up CozoDB in Python.
@@ -10,7 +8,7 @@ To learn how to use CozoDB (CozoScript), read the [docs](https://docs.cozodb.org
 ## Install
 
 ```bash
-pip install "pycozo[embedded,requests,pandas]"
+pip install "pycozo-async[embedded,requests,pandas]"
 ```
 
 To be useful, you must specify either the `embedded` option, which enables
@@ -24,7 +22,7 @@ Pandas dataframes. You should specify `pandas` if you use the Jupyter helper.
 First you need to import the client to use it:
 
 ```python
-from pycozo.client import Client
+from pycozo_async.client import Client
 ```
 
 ### Opening a database
@@ -225,7 +223,7 @@ that allows you to query CozoDB directly.
 The first version is activated by
 
 ```
-%load_ext pycozo.ipyext_direct
+%load_ext pycozo_async.ipyext_direct
 ```
 
 and allows all subsequent cells to be interpreted as CozoScript,
@@ -236,7 +234,7 @@ are interpreted as python.
 The second is activated by
 
 ```
-%load_ext pycozo.ipyext
+%load_ext pycozo_async.ipyext
 ```
 
 This version is less intrusive in that you need to prefix a cell by the line
@@ -274,9 +272,9 @@ There are other magic commands you can use:
 
 ## Programmatically constructing queries
 
-You can use builders in `pycozo.builder` to construct queries programmatically.
+You can use builders in `pycozo_async.builder` to construct queries programmatically.
 This is both safer and more convenient than concatenating strings.
-See [here](./pycozo/test_builder.py) for how to use it.
+See [here](./pycozo-async/test_builder.py) for how to use it.
 
 ## Building
 
