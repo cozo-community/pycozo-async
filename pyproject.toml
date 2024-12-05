@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycozo-async"
-version = "0.7.6"
+version = "0.7.7"
 description = ""
 authors = ["Julep AI developers <developers@julep.ai>"]
 readme = "README.md"
