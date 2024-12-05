@@ -67,9 +67,10 @@ class Client:
             self.embedded.close()
 
     def _headers(self):
-        return {
-            'x-cozo-auth': self.auth
-        }
+        if self.auth:
+            return {
+                'x-cozo-auth': self.auth
+            }
 
     async def _client_request(self, script, params=None, immutable=False):
         async with httpx.AsyncClient(timeout=None) as client:
